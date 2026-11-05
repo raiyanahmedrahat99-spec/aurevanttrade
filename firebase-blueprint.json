@@ -1,0 +1,100 @@
+{
+  "entities": {
+    "Article": {
+      "title": "Article",
+      "description": "Editorial journal article",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 200 },
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "excerpt": { "type": "string", "maxLength": 500 },
+        "content": { "type": "string" },
+        "heroImage": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "authorName": { "type": "string", "maxLength": 100 },
+        "publishedAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["draft", "published"] },
+        "readingTime": { "type": "integer" },
+        "seoTitle": { "type": "string", "maxLength": 100 },
+        "seoDescription": { "type": "string", "maxLength": 200 }
+      },
+      "required": ["title", "slug", "content", "categoryId", "status"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Journal category",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 50 },
+        "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "description": { "type": "string", "maxLength": 200 }
+      },
+      "required": ["name", "slug"]
+    },
+    "LeadershipProfile": {
+      "title": "Leadership Profile",
+      "description": "Corporate leadership member",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "title": { "type": "string", "maxLength": 100 },
+        "bio": { "type": "string", "maxLength": 1000 },
+        "email": { "type": "string", "format": "email" },
+        "imageUrl": { "type": "string" },
+        "order": { "type": "integer" },
+        "tier": { "type": "string", "enum": ["board", "executive"] },
+        "status": { "type": "string", "enum": ["draft", "verified"] }
+      },
+      "required": ["name", "title", "tier", "status"]
+    },
+    "RegionalOffice": {
+      "title": "Regional Office",
+      "description": "Regional market or office location",
+      "type": "object",
+      "properties": {
+        "city": { "type": "string", "maxLength": 50 },
+        "country": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string", "maxLength": 30 },
+        "status": { "type": "string", "enum": ["unverified", "verified", "active"] },
+        "imageUrl": { "type": "string" },
+        "order": { "type": "integer" }
+      },
+      "required": ["city", "country", "status"]
+    },
+    "ContactInquiry": {
+      "title": "Contact Inquiry",
+      "description": "Form submission from the contact page",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email" },
+        "organization": { "type": "string", "maxLength": 100 },
+        "enquiryType": { "type": "string" },
+        "subject": { "type": "string", "maxLength": 200 },
+        "message": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "enquiryType", "message", "createdAt"]
+    },
+    "NewsletterSubscriber": {
+      "title": "Newsletter Subscriber",
+      "description": "Email signup for the newsletter",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "subscribedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email", "subscribedAt"]
+    }
+  },
+  "firestore": {
+    "articles": { "schema": "Article", "description": "Collection of editorial articles" },
+    "categories": { "schema": "Category", "description": "Collection of article categories" },
+    "leadership": { "schema": "LeadershipProfile", "description": "Collection of leadership profiles" },
+    "offices": { "schema": "RegionalOffice", "description": "Collection of regional offices" },
+    "inquiries": { "schema": "ContactInquiry", "description": "Collection of contact inquiries" },
+    "subscribers": { "schema": "NewsletterSubscriber", "description": "Collection of newsletter subscribers" }
+  }
+}

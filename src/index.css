@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+
+  --color-ivory: #F4F1EA;
+  --color-obsidian: #20211F;
+  --color-champagne: #B59A69;
+  --color-stone-warm: #D8D2C7;
+  --color-grey-muted: #777873;
+}
+
+@layer base {
+  body {
+    @apply bg-ivory text-obsidian font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}

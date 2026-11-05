@@ -1,0 +1,6 @@
+{
+  "name": "AUREVANT GROUP",
+  "description": "International corporate website and editorial journal for the built environment, featuring architecture, engineering, and property insights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

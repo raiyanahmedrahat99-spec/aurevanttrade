@@ -1,0 +1,13 @@
+{
+  "companyName": "AUREVANT GROUP",
+  "tagline": "Built on Vision. Defined by Excellence.",
+  "website": "https://aurevantgroup.com",
+  "contactEmail": "info@aurevantgroup.com",
+  "exportDate": "2026-11-05",
+  "version": "1.0.0-PRO",
+  "sections": [
+    { "id": "corporate-profile", "title": "Corporate Profile", "page": "About Us" },
+    { "id": "leadership-directory", "title": "Leadership Directory", "page": "Our Leadership" },
+    { "id": "expertise-portfolio", "title": "Expertise Portfolio", "page": "Our Expertise" }
+  ]
+}
